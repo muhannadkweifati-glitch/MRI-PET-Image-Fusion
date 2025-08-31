@@ -1,0 +1,15 @@
+This project implements an MRI–PET image fusion method designed to combine the structural details of Magnetic Resonance Imaging (MRI) with the functional and metabolic information of Positron Emission Tomography (PET). The method is based on a multi-scale Gaussian decomposition and multi-directional Gabor filtering framework.
+
+Step 1: The MRI and PET images are preprocessed and aligned in size. PET images are converted to the YCbCr space, with the luminance (Y) channel extracted for fusion.
+
+Step 2: A Gaussian filter is applied to decompose each image into low-frequency (background and global structure) and high-frequency (edges and fine details) components.
+
+Step 3: High-frequency details are further analyzed using Gabor filters at multiple orientations to capture directional structural information.
+
+Step 4: Fusion is performed by weighted averaging of low-frequency components and maximum-selection of high-frequency components across both modalities.
+
+Step 5: The fused luminance channel is reconstructed and combined with the PET chrominance channels, yielding the final fused RGB image.
+
+Step 6: The quality of the fused image is evaluated through quantitative metrics such as Entropy, Contrast Index (CI), Sharpness, and QAB/F.
+
+This approach provides a fused image that preserves the anatomical clarity of MRI while embedding the functional insight from PET, which can improve diagnostic interpretation and clinical decision-making.
